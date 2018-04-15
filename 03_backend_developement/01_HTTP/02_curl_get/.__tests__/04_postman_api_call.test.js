@@ -43,9 +43,9 @@ test("Check that the result file is not empty (does the curl call work?)", done 
 
 test("Check that the call has been done", done => {
   expect.assertions(1);
-  const result = fs.readFileSync(resultFile(), "utf8");
 
   exec(`bash ${commandFile()}`).then(() => {
+    const result = fs.readFileSync(resultFile(), "utf8");
     curl(
       "https://postman-echo.com/get?foo=bar&program=camp2&people[]=Frieda&people[]=Francis",
       curlHeader

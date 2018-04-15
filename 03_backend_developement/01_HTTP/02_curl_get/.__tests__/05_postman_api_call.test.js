@@ -43,20 +43,20 @@ test("Check that the result file is not empty (does the curl call work?)", done 
 
 test("Check that the call has been done", done => {
   expect.assertions(1);
-  const result = fs.readFileSync(resultFile(), "utf8");
+
+  const date = new Date();
+  const dateYear =
+    date.getFullYear() +
+    "-" +
+    (date.getMonth() + 1).toString().padStart(2, "0") +
+    "-" +
+    date
+      .getDate()
+      .toString()
+      .padStart(2, "0");
 
   exec(`bash ${commandFile()}`).then(() => {
-    const date = new Date();
-    const dateYear =
-      date.getFullYear() +
-      "-" +
-      (date.getMonth() + 1).toString().padStart(2, "0") +
-      "-" +
-      date
-        .getDate()
-        .toString()
-        .padStart(2, "0");
-
+    const result = fs.readFileSync(resultFile(), "utf8");
     curl(
       `https://postman-echo.com/time/valid?timestamp=${dateYear}`,
       curlHeader

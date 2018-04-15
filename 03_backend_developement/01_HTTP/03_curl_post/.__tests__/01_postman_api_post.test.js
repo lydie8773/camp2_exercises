@@ -33,9 +33,9 @@ test("Check that the result file exists", done => {
 
 test("Check that the call has been done", done => {
   expect.assertions(1);
-  const result = fs.readFileSync(resultFile(), "utf8");
 
   exec(`bash ${commandFile()}`).then(() => {
+    const result = fs.readFileSync(resultFile(), "utf8");
     curl("https://postman-echo.com/post", {"Hello from postman":""},curlHeader).then(curlResult => {
       const formData = JSON.parse(curlResult).form;
       expect(JSON.stringify(formData, null, 2) + "\n").toEqual(result);
