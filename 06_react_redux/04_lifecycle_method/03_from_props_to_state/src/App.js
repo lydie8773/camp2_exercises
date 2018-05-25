@@ -13,7 +13,7 @@ class App extends Component {
     this.setState({isbn: event.target.value});
   }
   handleSearch = () => {
-
+		this.setState({isbn: this.state.isbn});
   }
   render() {
     return (

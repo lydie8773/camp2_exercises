@@ -7,13 +7,25 @@ class Book extends Component {
       book: null
     }
   }
-  componentDidMount() {
-    fetch(`https://openlibrary.org/api/books?bibkeys=ISBN:${this.props.isbn}8&format=json&jscmd=data`)
-      .then(response => response.json())
-      .then(bookData => {
-        this.setState({book: Object.values(bookData)[0]})
-      })
-  }
+  // componentDidMount() {
+  //   fetch(`https://openlibrary.org/api/books?bibkeys=ISBN:${this.props.isbn}8&format=json&jscmd=data`)
+  //     .then(response => response.json())
+  //     .then(bookData => {
+  //       this.setState({book: Object.values(bookData)[0]})
+  //     })
+  // }
+
+	componentDidUpdate(prevProps, prevState){
+		fetch(`https://openlibrary.org/api/books?bibkeys=ISBN:${this.props.isbn}8&format=json&jscmd=data`)
+			.then(response => response.json())
+			.then(bookData => {
+				console.log("prevState.book: ", prevState.book);
+				if(prevProps.isbn !== this.props.isbn){
+					this.setState({book: Object.values(bookData)[0]})
+				}
+			})
+	}
+
   render() {
     return (
       <div>
@@ -21,7 +33,7 @@ class Book extends Component {
           ? (
             <div>
               <div>{this.state.book.title}</div>
-              <img src={this.state.book.cover.medium} />
+              <img src={this.state.book.cover.medium} alt="book"/>
             </div>
           )
           : null
