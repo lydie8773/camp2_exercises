@@ -3,7 +3,7 @@ import _ from "underscore";
 
 function Row(props) {
   return (
-    <tr>
+    <tr key={props.decathlon_id}>
       <td>{props.decathlon_id}</td>
       <td>{props.title}</td>
       <td>{props.price}</td>

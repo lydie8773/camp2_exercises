@@ -25,3 +25,8 @@ const products =
 ReactDOM.render(
   <App lines={products} />, document.getElementById("root"));
 registerServiceWorker();
+
+//
+// module.exports = {
+// 	products: products
+// }
