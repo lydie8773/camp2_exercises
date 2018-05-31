@@ -27,6 +27,6 @@ ReactDOM.render(
 registerServiceWorker();
 
 //
-// module.exports = {
+// modules.exports = {
 // 	products: products
 // }

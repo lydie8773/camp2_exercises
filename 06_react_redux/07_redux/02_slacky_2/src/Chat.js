@@ -21,7 +21,7 @@ class Chat extends Component {
   componentDidUpdate() {
     // https://reactjs.org/docs/react-component.html#componentdidupdate
     // This will make the list of messages scroll to the bottom each time
-    // the component update, that way, the last message will always be visible
+    // the components update, that way, the last message will always be visible
     this.messageListDiv.scrollTop = this.messageListDiv.scrollHeight;
   }
 

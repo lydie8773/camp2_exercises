@@ -51,7 +51,7 @@ test('Snapshot test: onClick()', () => {
 describe("Enzyme shallow", () => {
 	it("Shallow test: onClick()", () => {
 		const component = shallow(<App lines={products}/>);
-		console.log("component: ", component.find("td").first().props());
+		console.log("components: ", component.find("td").first().props());
 		console.log("state: ", component.state().reverseSort);
 
 		component.find("th").first().simulate("click");

@@ -404,7 +404,7 @@ export default Button; // Don’t forget to use export default!
 
 ```js
 import React, { Component } from 'react';
-import Button from './Button'; // Import a component from another file
+import Button from './Button'; components
 
 class DangerButton extends Component {
   render() {
@@ -591,7 +591,7 @@ This will allow you to do imports like
 
 ```scss
 @import 'styles/_colors.scss'; // assuming a styles directory under src/
-@import 'nprogress/nprogress'; // importing a css file from the nprogress node module
+@import 'nprogress/nprogress'; modules
 ```
 
 At this point you might want to remove all CSS files from the source control, and add `src/**/*.css` to your `.gitignore` file. It is generally a good practice to keep the build products outside of the source control.
@@ -1512,7 +1512,7 @@ Example package.json:
       }
     },
     "coverageReporters": ["text"],
-    "snapshotSerializers": ["my-serializer-module"]
+    "snapshotSerializers": [modules]
   }
 }
 ```

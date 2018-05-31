@@ -9,7 +9,7 @@ import Adapter from 'enzyme-adapter-react-16';
 configure({ adapter: new Adapter() });
 
 
-describe("Todo test ", () => {
+describe("TodoList test ", () => {
 	it("todo snapshots test root node ", () => {
 		const component = renderer.create(<App />);
 		let snapshot = component.toJSON();
@@ -26,7 +26,7 @@ describe("Todo test ", () => {
 
 	it("Enzyme: add one task", () => {
 		const component = shallow(<App />);
-		// console.log("form: ", component.find("form").first().props());
+		// console.log("form: ", components.find("form").first().props());
 		component.setState({newTask: "test New Task"});
 		component.find("form").first().simulate("submit", { preventDefault() {} });
 
@@ -50,12 +50,12 @@ describe("Todo test ", () => {
 		const component = shallow(<App />);
 		component.setState({newTask: "1 task"});
 		component.find("form").first().simulate("submit", { preventDefault() {} });
-		// console.log("checkobx: ", component.find("input").at(1).props());
+		// console.log("checkobx: ", components.find("input").at(1).props());
 
 		component.find("input").at(1).simulate("change");
-		// console.log("checkobx: ", component.find("input").at(1).props());
-		// console.log("button: ", component.find("button").props());
-		// console.log(component.find("li").at(0).props());
+		// console.log("checkobx: ", components.find("input").at(1).props());
+		// console.log("button: ", components.find("button").props());
+		// console.log(components.find("li").at(0).props());
 		expect(component.find("input").length).toBe(3);
 	});
 })

@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Todo test  snapshots: test first node of function addtask 1`] = `[Function]`;
+exports[`TodoList test  snapshots: test first node of function addtask 1`] = `[Function]`;
 
-exports[`Todo test  todo snapshots test root node  1`] = `
+exports[`TodoList test  todo snapshots test root node  1`] = `
 <div
-  className="Todo"
+  className="TodoList"
 >
   <div
     className="new-todo"

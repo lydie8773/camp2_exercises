@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand:300|500|700");
+
+/* Global Styling */
+
+* {
+  font-family: "Quicksand", sans-serf !important;
+}
+
+#page-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.group {
+  float: right;
+}
+
+main {
+  flex-grow: 1;
+}
+
+.complete {
+  text-decoration: line-through;
+}
+
+footer {
+  height: 100px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.todo-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.todo-item h4 {
+  margin-right: auto
+}
+
+/* React Animations */
+.slide-enter {
+  right: 100px;
+  opacity: 0;
+}
+
+
+.slide-enter-active {
+  right: 0;
+  opacity: 1;
+  transition: .3s ease-in all;
+}
+
+.slide-leave {
+  background-color: inherit;
+  right: 0;
+  opacity: 1;
+}
+
+.slide-leave-active {
+  background-color: #ff7043;
+  opacity: 0;
+  right: -100px;
+  transition: .3s ease-out all;
+}
