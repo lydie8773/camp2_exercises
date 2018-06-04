@@ -1,34 +1,70 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
-      integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    <nav class="navbar navbar-dark bg-primary">
-       <a class="navbar-brand" href="#">Departments</a>
-    </nav>
-    <div class="container">
-      <div class="row">
-        <div class="col col-sm-3"></div>
-        <div class="col col-sm-9">
-          <h1>List of french departments</h1>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+        integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+        crossorigin="anonymous"
+  />
+</head>
+<body>
+<nav class="navbar navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Departments</a>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col col-sm-3"></div>
+    <div class="col col-sm-9">
+      <h1>List of french departments</h1>
 
-          <ul id="department-list" class="list-group">
-            <!-- Your list will end up here -->
-          </ul>
+      <ul id="department-list" class="list-group">
+        <!-- Your list will end up here -->
+      </ul>
 
-        </div>
-      </div>
     </div>
-    <script src="./departments.js"></script>
-    <script>
-      // Your code here
-      // the departments are accessible in a global variable named DEPARTMENTS
-    </script>
-  </body>
+  </div>
+</div>
+<script src="./departments.js">
+</script>
+<script>
+    // Your code here
+    // the departments are accessible in a global variable named DEPARTMENTS
+    const departments_data = DEPARTMENTS;
+
+    // function makeUL(array) {
+    //     // Create the list element:
+    //     // var list = document.createElement("ul");
+    //
+    //     for(var i = 0; i < array.length; i++) {
+    //         // Create the list item:
+    //         var item = document.createElement("li");
+    //
+    //         // Set its contents:
+    //         item.appendChild(document.createTextNode(array[i]));
+    //
+    //         // Add it to the list:
+    //         list.appendChild(item);
+    //     }
+    //
+    //     // Finally, return the constructed list:
+    //     return list;
+    // }
+    //
+    // document.querySelector(".list-group").innerHTML = makeUL(departments_data);
+    // document.getElementById("department-list").appendChild(makeUL(departments_data));
+
+    function makeUL(){
+        let m = [];
+
+        for (let i = 0; i < departments_data.length; i += 1){
+            // alert(departments_data[i]);
+            m[i] = '<li>' + departments_data[i] + '</li>';
+            // alert(m[0]);
+
+            document.querySelector("#department-list").innerHTML += m[i];
+        }
+    }
+    makeUL();
+</script>
+</body>
 </html>
